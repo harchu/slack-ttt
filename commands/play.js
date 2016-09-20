@@ -48,7 +48,14 @@ function initializeCommand() {
         let col = move % size;
 
         let val = board[move];
-        console.log(board);
+
+        /**
+         * @brief This function checks if the last 'move' caused the player to
+         *        win the game in the move's row.
+         *
+         * @return object indicating if the player won ('status') and the 'row',
+         *                of the winning symbol
+         */
         function hasWonRow() {
             let i = 0;
             while (i < size) {
@@ -64,6 +71,13 @@ function initializeCommand() {
             };
         }
 
+        /**
+         * @brief This function checks if the last 'move' caused the player to
+         *        win the game in the move's column.
+         *
+         * @return object indicating if the player won ('status') and the
+         *                'column' of the winning symbol
+         */
         function hasWonCol() {
             let i = 0;
             while (i < size) {
@@ -79,6 +93,13 @@ function initializeCommand() {
             };
         }
 
+        /**
+         * @brief This function checks if the last 'move' caused the player to
+         *        win the game in the fwd diagonal.
+         *
+         * @return object indicating if the player won ('status') and the
+         *                'diagonal' of the winning symbol
+         */
         function hasWonFwdDiagonal() {
             let i = 0;
             while (i < size) {
@@ -94,6 +115,13 @@ function initializeCommand() {
             };
         }
 
+        /**
+         * @brief This function checks if the last 'move' caused the player to
+         *        win the game in the backward diagonal.
+         *
+         * @return object indicating if the player won ('status') and the
+         *                'diagonal' of the winning symbol
+         */
         function hasWonBwdDiagonal() {
             let i = 0;
             while (i < size) {
@@ -133,6 +161,7 @@ function initializeCommand() {
             }
         }
 
+        // The last move did not cause the player to win the game.
         return {status: false};
     }
 
