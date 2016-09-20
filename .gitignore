@@ -1,0 +1,17 @@
+# Build Directory
+build
+
+# Node modules directory
+node_modules
+
+#Log files
+*.log
+
+#Hidden OS files
+.DS_Store
+
+#Data directories
+data
+
+#Zipped files
+*.gz
